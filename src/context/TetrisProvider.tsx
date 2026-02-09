@@ -229,7 +229,8 @@ const TetrisProvider = ({ children }: AllProviderProps) => {
       birthdayId === 2 ||
       birthdayId === 3 ||
       birthdayId === 4 ||
-      birthdayId === 5
+      birthdayId === 5 ||
+      birthdayId === 6
     ) {
       return false;
     }
@@ -247,7 +248,8 @@ const TetrisProvider = ({ children }: AllProviderProps) => {
       birthdayId === 2 ||
       birthdayId === 3 ||
       birthdayId === 4 ||
-      birthdayId === 5
+      birthdayId === 5 ||
+      birthdayId === 6
     ) {
       return true;
     }
