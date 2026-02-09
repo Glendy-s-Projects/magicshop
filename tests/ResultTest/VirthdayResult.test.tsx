@@ -4,8 +4,10 @@ import Resultado from "@/app/(V)irthday/Resultado";
 import { ImageListTypes } from "@/types/index";
 
 // Mock de next/image para evitar errores en test
-jest.mock("next/image", () => (props: any) => {
-    return <img {...props} />;
+jest.mock("next/image", () => {
+    return function MockedImage(props: any) {
+        return <img {...props} src={props.src} />;
+    };
 });
 
 const mockOnCardClick = jest.fn();

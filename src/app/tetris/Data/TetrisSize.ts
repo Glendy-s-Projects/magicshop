@@ -88,7 +88,7 @@ export const BirthdayCards: birthdayCardType[] = [
     aka: "J-Hope",
     shortAka: "JH",
     date: new Date(1994, 1, 18),
-    birthdaycard: "",
+    birthdaycard: "/Tetris/HOBI.webp",
   },
   {
     id: 7,
