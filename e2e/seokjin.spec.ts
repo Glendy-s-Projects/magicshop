@@ -1,5 +1,7 @@
 import { test } from "@playwright/test";
 
+test.describe.configure({ mode: "serial" });
+
 test("generate Seokjin", async ({ page }) => {
   await page.goto("http://localhost:3000/seokjin");
   await page.locator('div').filter({ hasText: 'Unlock the game by adding' }).nth(1).click();

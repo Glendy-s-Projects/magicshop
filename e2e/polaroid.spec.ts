@@ -1,5 +1,7 @@
 import { test } from "@playwright/test";
 
+test.describe.configure({ mode: "serial" });
+
 test("generate a polaroid photo", async ({ page }) => {
   await page.goto("http://localhost:3000/polaroid");
   await page.locator("#print").click();

@@ -1,5 +1,7 @@
 import { test } from "@playwright/test";
 
+test.describe.configure({ mode: "serial" });
+
 test("Check all the links from the main page", async ({ page }) => {
   await page.goto("http://localhost:3000/");
   await page.getByRole('link', { name: 'Polaroid' }).nth(1).click();
