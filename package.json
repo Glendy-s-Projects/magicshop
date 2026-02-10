@@ -8,9 +8,17 @@
     "start": "next start",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "jest --passWithNoTests",
-    "test:playwright": "playwright test",
-    "check:all": "npm run eslint && npm run test && npm run build && npm run test:playwright "
+    "test:unit": "jest",
+    "test:unit:watch": "jest --watch --maxWorkers=1",
+    "test:unit:serial": "jest --runInBand",
+    "test:all": "npm run test:unit && npm run test:e2e",
+    "test:ci": "npm run test:unit:coverage && npm run test:e2e",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:debug": "playwright test --debug",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:report": "playwright show-report",
+    "check:all": "npm run eslint && npm run test && npm run build "
   },
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",

@@ -1,5 +1,7 @@
 import { test } from "@playwright/test";
 
+test.describe.configure({ mode: "serial" });
+
 test("generate (V)irthday", async ({ page }) => {
   await page.goto("http://localhost:3000/(V)irthday");
 
