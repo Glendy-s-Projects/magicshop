@@ -9,9 +9,8 @@ const Resultado = () => {
   const { usuario, handleResetContent } = useRequestInfo();
   const { handleDownloadImage } = useDownload();
   const { name, content, diseño } = usuario;
-  const selectedStyle = loveNotesImg.find(
-    (lovenote) => lovenote.name === diseño
-  );
+  const selectedStyle = loveNotesImg.find((style) => style.name === diseño);
+
   return (
     <div className={`flex flex-col gap-6  ${virthday3.className}`}>
       <div className={`flex flex-col shadow-2xl shadow-black/80 font-virthday3`} id="print">

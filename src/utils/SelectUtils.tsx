@@ -33,7 +33,7 @@ const SelectUtils = ({
         {options.map((option) => (
           <option
             key={option.id}
-            value={option.id}
+            value={option.name}
             className="text-black border border-t-black"
           >
             {option.name}
