@@ -7,10 +7,10 @@ const SelectAlbum = () => {
   const { usuario, setUsuario } = useRequestInfo();
   const { diseño, song, name } = usuario;
   
-  // Buscar el álbum por ID (el select guarda el id como string)
-  const selectedAlbum = hobiMusic.find((album) => album.id === Number(diseño));
+  // Buscar el álbum por nombre (el select guarda el name como string)
+  const selectedAlbum = hobiMusic.find((album) => album.name === diseño);
   
-  const songOptions =
+    const songOptions =
     selectedAlbum?.songs.map((song) => ({
       id: song.id,
       name: song.title,
@@ -23,7 +23,7 @@ const SelectAlbum = () => {
   useEffect(() => {
     if (diseño && song) {
       // Verificar si la canción actual existe en el álbum seleccionado
-      const songExists = songOptions.find((option) => option.id === Number(song));
+      const songExists = songOptions.find((option) => option.name === song);
       if (!songExists) {
         setUsuario({ ...usuario, song: "" });
       }
