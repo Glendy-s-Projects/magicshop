@@ -108,7 +108,7 @@ const Arirang = () => {
       />
 
       <ArirangTag
-        title="your"
+        title="what is your love song?"
         color="text-red-700"
         transform="rotate-[12deg] translate-x-[-50%] translate-y-[-50%] top-1/2"
       />

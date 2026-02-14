@@ -9,7 +9,6 @@ import InputNameUtils from "@/utils/InputNameUtils";
 const Formulario = () => {
   const { handleSubmit, isMaxCharLimitReachedH, usuario } = useRequestInfo();
   const { content, diseño } = usuario;
-  console.log("Usuario:", diseño);
   return (
     <div
       className={`shadow-2xl relative flex flex-col w-full backdrop-blur-xl bg-pink-100/10 outline-none focus:outline-none rounded-lg p-5 ${montserrat.className}`}
