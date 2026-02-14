@@ -229,6 +229,13 @@
   background-size: cover;
 }
 
+.bg-arirangtag {
+  background-image: url("/arirang/label.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
 .loader {
   position: relative;
   width: 120px;
