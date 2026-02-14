@@ -1,0 +1,55 @@
+.arirang-loader {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin: 20px auto;
+}
+
+.arirang-image {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  border-radius: 50%;
+  animation: animloader 1s linear infinite alternate;
+}
+
+.arirang-image:nth-child(1) {
+  left: -58px;
+}
+
+.arirang-image:nth-child(2) {
+  left: -14px;
+  animation-delay: -0.33s;
+}
+
+.arirang-image:nth-child(3) {
+  left: 34px;
+  animation-delay: -0.66s;
+}
+
+@keyframes animloader {
+  0% {
+    transform: translateY(-6px);
+  }
+  33% {
+    transform: translateY(6px);
+  }
+  66% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
+
+/* @keyframes animloader {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(10px);
+  }
+} */
