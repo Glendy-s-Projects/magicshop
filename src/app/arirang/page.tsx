@@ -42,14 +42,16 @@ const ArirangTag = ({
   title,
   color,
   transform,
+  textSize
 }: {
   title: string;
   color: string;
   transform: string;
+  textSize: string;
 }) => {
   return (
     <div className={`${color} ${transform} absolute bg-arirangtag p-14 `}>
-      <h1 className="text-4xl font-bold text-white uppercase">{title}</h1>
+      <h1 className={`${textSize} font-bold text-white uppercase`}>{title}</h1>
     </div>
   );
 };
@@ -100,23 +102,26 @@ const Arirang = () => {
           loading="eager"
         ></iframe>
       </div> */}
-
+      
       <ArirangTag
         title="What is"
         color="text-red-700"
         transform="rotate-[-12deg] translate-x-[-50%] translate-y-[-50%]"
+        textSize="text-sm"
       />
 
       <ArirangTag
         title="what is your love song?"
         color="text-red-700"
         transform="rotate-[12deg] translate-x-[-50%] translate-y-[-50%] top-1/2"
+        textSize="text-4xl"
       />
 
       <ArirangTag
         title="love song?"
         color="text-red-700"
         transform="rotate-[0deg] translate-x-[-50%] translate-y-[-50%] top-2/3"
+        textSize="text-2xl"
       />
 
       <div className="flex flex-col min-h-screen w-full items-center justify-center z-10 relative ">
