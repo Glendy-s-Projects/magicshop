@@ -6,6 +6,7 @@ import FormularioArirang from "./formulario";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import ResultadoArirang from "./ResultadoArirang";
 
+// Comentario aqui 
 const arirang = [
   {
     image: "/arirang/a.png",
@@ -102,7 +103,7 @@ const Arirang = () => {
           loading="eager"
         ></iframe>
       </div> */}
-      
+
       <ArirangTag
         title="What is"
         color="text-red-700"
