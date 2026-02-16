@@ -14,7 +14,7 @@ const FormularioArirang = ({ onSubmit }: FormularioArirangProps) => {
   const handleFormSubmit = onSubmit || handleSubmit;
   return (
     <div className="w-96 h-96 relative">
-      <div className=" bg-black/5 h-full flex flex-col items-center justify-center ">
+      <div className=" bg-white h-full flex flex-col items-center justify-center ">
         <div className="flex flex-col items-center justify-center text-purple-100 ">
           <h1
             data-testid="title"
