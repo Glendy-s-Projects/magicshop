@@ -5,9 +5,10 @@ import Image from "next/image";
 import FormularioArirang from "./formulario";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import ResultadoArirang from "./ResultadoArirang";
-//import { transform } from "next/dist/build/swc/generated-native";
+import ArirangTag from "./components/ArirangTag";
+import { tagTransforms } from "./data/arirangUtils";
+import ArirangTags from "./components/ArirangTags";
 
-// Comentario aqui
 const arirang = [
   {
     image: "/arirang/a.png",
@@ -39,50 +40,6 @@ const LoaderArirang = () => {
     </div>
   );
 };
-
-const ArirangTag = ({
-  title,
-  color,
-  transform,
-  textSize,
-  textColor,
-}: {
-  title: string;
-  color: string;
-  transform: string;
-  textSize: string;
-  textColor: string;
-}) => {
-  return (
-    <div className={`${color} ${transform} absolute p-2 top-1/2 left-1/2`}>
-      <h1
-        className={`${textSize} ${textColor} uppercase text-center whitespace-nowrap font-semibold`}
-      >
-        {title}
-      </h1>
-    </div>
-  );
-};
-
-const tagTransforms = [
-  "rotate-[20deg] translate-x-[-25%] translate-y-[-55%]",
-  "rotate-[8deg] translate-y-[56%] translate-x-[-98%]",
-  "rotate-[45deg] translate-y-[-50%] translate-x-[-50%]",
-  "rotate-[15deg] translate-y-[42%] translate-x-[-65%]",
-  "rotate-[-25deg] translate-x-[-34%] translate-y-[-45%]",
-  "rotate-[-26deg] translate-x-[-75%] translate-y-[-50%]",
-  "rotate-[-10deg] translate-x-[-26%] translate-y-[-45%]",
-  // "rotate-[-35deg] translate-x-[-60%] translate-y-[-25%]", // transparent
-  "rotate-[-2deg] translate-x-[-60%] translate-y-[-100%]",
-  "rotate-[25deg] translate-x-[-48%] translate-y-[-65%]",
-  "rotate-[45deg] translate-x-[-32%] translate-y-[10%]",
-  //"rotate-[-10deg] translate-x-[-85%] translate-y-[25%]",
-  "rotate-[-30deg] translate-x-[-25%] translate-y-[-15%]",
-  "rotate-[5deg] translate-x-[-45%] translate-y-[75%]",
-  "rotate-[40deg] translate-x-[-39%] translate-y-[-50%]",
-  "rotate-[7deg] translate-x-[-20%] translate-y-[-20%]",
-  "rotate-[-32deg] translate-x-[-32%] translate-y-[-19%]"
-];
 
 const Arirang = () => {
   const [initialLoading, setInitialLoading] = useState(true);
@@ -131,28 +88,7 @@ const Arirang = () => {
           loading="eager"
         ></iframe>
       </div> */}
-      {/* <div className="bottom-8">
-        <ArirangTag
-          title="What is"
-          color="text-red-700"
-          transform="rotate-[-12deg] translate-x-[-50%] translate-y-[-50%]"
-          textSize="text-sm"
-        />
-
-        <ArirangTag
-          title="what is your love song?"
-          color="text-red-700"
-          transform="rotate-[12deg] translate-x-[-50%] translate-y-[-50%] top-1/2"
-          textSize="text-4xl"
-        />
-
-        <ArirangTag
-          title="love song?"
-          color="text-red-700"
-          transform="rotate-[0deg] translate-x-[-50%] translate-y-[-50%] top-2/3"
-          textSize="text-2xl"
-        />
-      </div> */}
+      <ArirangTags />
       <ArirangTag
         title="What is your love song? What is your love song? What is your love song? What is your love song? What is your love song? What is your love song?"
         color="bg-white"
