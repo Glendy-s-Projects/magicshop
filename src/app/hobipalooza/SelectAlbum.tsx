@@ -6,19 +6,19 @@ import { useEffect } from "react";
 const SelectAlbum = () => {
   const { usuario, setUsuario } = useRequestInfo();
   const { diseño, song, name } = usuario;
-  
+
   // Buscar el álbum por nombre (el select guarda el name como string)
   const selectedAlbum = hobiMusic.find((album) => album.name === diseño);
-  
-    const songOptions =
+
+  const songOptions =
     selectedAlbum?.songs.map((song) => ({
       id: song.id,
       name: song.title,
     })) || [];
-  
+
   const commonstyleSelect =
     "appearance-none rounded transition-all border-white border bg-white placeholder:text-gray-400 text-black w-full py-2 px-3 text-center  border-white  disabled:border-gray-300 disabled:text-gray-400 disabled:cursor-not-allowed";
-  
+
   // Reset song when album changes
   useEffect(() => {
     if (diseño && song) {
@@ -41,7 +41,6 @@ const SelectAlbum = () => {
         disabled={!name}
         placeholder="Choose your favorite"
         className={`${commonstyleSelect}`}
-        
       />
 
       <SelectUtils
@@ -52,7 +51,6 @@ const SelectAlbum = () => {
         disabled={!diseño}
         placeholder={selectedAlbum ? "Choose a Song" : "Select an album first"}
         className={`${commonstyleSelect} mb-3`}
-        
       />
     </div>
   );

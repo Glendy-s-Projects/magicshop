@@ -1,34 +1,35 @@
-import useRequestInfo from '@/hooks/useRequestInfo'
-import { ButtonUtils } from '@/utils/ButtonUtils'
-import InputNameUtils from '@/utils/InputNameUtils'
-import React from 'react'
+import useRequestInfo from "@/hooks/useRequestInfo";
+import { ButtonUtils } from "@/utils/ButtonUtils";
+import InputNameUtils from "@/utils/InputNameUtils";
+import React from "react";
 
 interface FormularioArirangProps {
-  onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void
+  onSubmit?: (e: React.FormEvent<HTMLFormElement>) => void;
 }
 
 const FormularioArirang = ({ onSubmit }: FormularioArirangProps) => {
-  const { handleSubmit, usuario } = useRequestInfo()
-  const { name } = usuario
+  const { handleSubmit, usuario } = useRequestInfo();
+  const { name } = usuario;
 
-  const handleFormSubmit = onSubmit || handleSubmit
+  const handleFormSubmit = onSubmit || handleSubmit;
   return (
     <div className="w-96 h-96 relative">
-      <div className=" bg-red-500 h-full flex flex-col items-center justify-center ">
+      <div className=" bg-[#f5193b] h-full flex flex-col items-center justify-center ">
         <div
           data-testid="title"
           className="text-3xl flex flex-col w-full items-center justify-center px-4  max-md:text-xl  text-center font-bold uppercase max-sm:text-md space-y-0 text-red-600"
         >
-          <span className=" bg-white px-3 py-1.5 mx-12 rotate-[-7deg] translate-x-[-5%] border border-gray-600  z-90   ">
+          <span className=" bg-arirangWhiteTag object-contain px-6 py-2.5 mx-12 rotate-[-7deg] translate-x-[-5%]   z-90   ">
             What is
           </span>
 
-          <span className=" px-4 py-1 bg-white rotate-[8deg] translate-x-[-1%] border border-gray-600   z-60 ">
+          <span className=" px-8 py-2 bg-arirangWhiteTag rotate-[8deg] translate-x-[-1%]   z-60 ">
             your
           </span>
 
-          <span className="px-4 py-1  bg-white z--1000">
-            love song?</span>
+          <span className="px-8 py-2  bg-arirangWhiteTag z--1000">
+            love song?
+          </span>
         </div>
 
         <div className="max-sm:px-10 max-sm:py-10 w-96 px-8">
@@ -39,18 +40,18 @@ const FormularioArirang = ({ onSubmit }: FormularioArirangProps) => {
           >
             <InputNameUtils
               placeholder="write your name"
-              className="placeholder:text-gray-400 text-center bg-red-600 border-0 rounded-xl py-1 px-2"
+              className="placeholder:text-red-200 text-center bg-[#d60f2d] border-0 rounded-sm py-1 px-2"
             />
             <ButtonUtils
               label="Search"
-              className={`w-full cursor-pointer uppercase py-1 px-2 max-sm:text-sm  text-white  ${name ? "bg-red-800 hover:bg-red-900 rounded-xl active:bg-red-900/70" : "disabled:cursor-not-allowed disabled:text-red-800 disabled:hover-none"}`}
+              className={`w-full cursor-pointer uppercase py-2 px-2 max-sm:text-sm  text-white  ${name ? "bg-red-800 hover:bg-red-900 rounded-xl active:bg-red-900/70" : "disabled:cursor-not-allowed disabled:text-red-400 disabled:hover-none disabled:bg-red-600/50"}`}
               disabled={!name}
             />
           </form>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default FormularioArirang
+export default FormularioArirang;

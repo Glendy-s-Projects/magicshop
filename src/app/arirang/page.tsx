@@ -191,7 +191,7 @@ const Arirang = () => {
           Arirang
         </h1>
 
-        {/* {initialLoading ? (
+        {initialLoading ? (
           <LoaderArirang />
         ) : showLoader ? (
           <LoaderArirang />
@@ -199,8 +199,8 @@ const Arirang = () => {
           <ResultadoArirang onReset={handleReset} />
         ) : (
           <FormularioArirang onSubmit={handleFormSubmit} />
-        )} */}
-        <ResultadoArirang onReset={handleReset} />
+        )}
+        {/* <ResultadoArirang onReset={handleReset} /> */}
       </div>
     </div>
   );

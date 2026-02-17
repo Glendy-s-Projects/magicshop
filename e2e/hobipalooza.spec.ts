@@ -10,13 +10,13 @@ test("Generate a Hobipalooza", async ({ page }) => {
   await page.getByTestId('form').locator('div').first().click();
   await page.getByRole('textbox', { name: 'Use your X @username' }).click();
   await page.getByRole('textbox', { name: 'Use your X @username' }).fill('casa')
-  await page.locator('select[name="diseño"]').selectOption('2');
-  await page.locator('#song').selectOption('3');
+  await page.locator('select[name="diseño"]').selectOption('Singles or Collabs');
+  await page.locator('#song').selectOption('Rush Hour (Feat. j-hope of BTS)');
   await page.getByTestId('form').getByTestId('button').click();
   await page.getByText('happy').click();
   //await page.getByText('HOBI-DAY').click();
   //await page.getByText('Don´t forget to scan your QR').click();
-  await page.getByText('Here it is your ticket, keep').click();
+  await page.getByText('Here it is your ticket, keep').click({ force: true });
   // await page.locator('div').filter({ hasText: /^Name: casaRow: Jack In The BoxSeat: What If\.\.\.$/ }).nth(2).click();
   // const download3Promise = page.waitForEvent('download');
   // await page.getByText('Download Restart').click();

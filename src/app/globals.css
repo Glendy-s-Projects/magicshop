@@ -229,8 +229,15 @@
   background-size: cover;
 }
 
-.bg-arirangtag {
+.bg-arirangRedTag {
   background-image: url("/arirang/label.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-arirangWhiteTag {
+  background-image: url("/arirang/whiteTag.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;

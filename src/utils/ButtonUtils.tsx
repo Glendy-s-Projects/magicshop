@@ -12,7 +12,7 @@ export const ButtonUtils = ({
   return (
     <button
       data-testid="button"
-      className={`flex justify-center  gap-2 font-bold transition-all ${className} rounded-xl ${disableColors} `}
+      className={`flex justify-center  gap-2 font-bold transition-all ${className} rounded-sm  ${disableColors} `}
       onClick={onClick}
       disabled={disabled}
       title={title}
