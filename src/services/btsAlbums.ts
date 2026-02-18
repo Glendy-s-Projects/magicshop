@@ -1,42 +1,14 @@
 import { SpotifyAlbum } from "@/types/types.spotify";
 import { getTokenSpotify, getAllArtistAlbums, getAlbumTracks } from "./handlerSpotify";
+import { unstable_cache } from "next/cache";
 
 const BTS_ARTIST_ID = "3Nrfpe0tUJi4K4DXYWgMUX";
-const CACHE_KEY = "bts_albums_cache";
-const CACHE_DURATION = 24 * 60 * 60 * 1000; // 24 horas
 
-interface CachedData {
-  albums: SpotifyAlbum[];
-  timestamp: number;
-}
-
-export const getBTSAlbums = async (): Promise<SpotifyAlbum[]> => {
+const getBTSAlbumsUncached = async (): Promise<SpotifyAlbum[]> => {
   try {
-    // Verificar cache en localStorage
-    if (typeof window !== "undefined") {
-      const cached = localStorage.getItem(CACHE_KEY);
-      if (cached) {
-        const { albums, timestamp }: CachedData = JSON.parse(cached);
-        const isExpired = Date.now() - timestamp > CACHE_DURATION;
-        
-        if (!isExpired) {
-          return albums.filter(album => album.album_type === "album");
-        }
-      }
-    }
-
     const token = await getTokenSpotify();
     const albums = await getAllArtistAlbums(token, BTS_ARTIST_ID);
     const filteredAlbums = albums.filter(album => album.album_type === "album");
-    
-    // Guardar en cache
-    if (typeof window !== "undefined") {
-      const cacheData: CachedData = {
-        albums: filteredAlbums,
-        timestamp: Date.now()
-      };
-      localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData));
-    }
     
     return filteredAlbums;
   } catch (error) {
@@ -44,6 +16,16 @@ export const getBTSAlbums = async (): Promise<SpotifyAlbum[]> => {
     return [];
   }
 };
+
+// Cache the BTS albums data for 24 hours using Next.js server-side caching
+// Note: unstable_cache is the standard way to cache server functions in Next.js App Router
+export const getBTSAlbums = unstable_cache(
+  getBTSAlbumsUncached,
+  ["getBTSAlbums"], // Unique cache key for this function
+  {
+    revalidate: 86400 // 24 hours in seconds
+  }
+);
 
 export const getRandomSongFromAlbum = async (albumId: string): Promise<string | null> => {
   try {
