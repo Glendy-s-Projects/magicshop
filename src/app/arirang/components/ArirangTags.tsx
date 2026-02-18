@@ -159,7 +159,7 @@ const ArirangTags = () => {
         title={RIBBONS_TITLE}
         color="bg-arirangRedTag"
         textColor="text-white/80"
-        transform={`rotate-[10deg] left-0 w-[50vw] z-10 translate-x-[-100%] translate-y-[-40%`}
+        transform={`rotate-[10deg] left-0 w-[50vw] z-10 translate-x-[-100%] translate-y-[-40%]`}
         textSize="text-4xl"
       />
       <ArirangTag
