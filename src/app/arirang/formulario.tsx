@@ -12,6 +12,7 @@ const FormularioArirang = ({ onSubmit }: FormularioArirangProps) => {
   const { name } = usuario;
 
   const handleFormSubmit = onSubmit || handleSubmit;
+  const tagsStyles= " bg-arirangWhiteTag px-8 py-2"
   return (
     <div className="w-96 h-96 relative">
       <div className=" bg-[#f5193b] h-full flex flex-col items-center justify-center ">
@@ -19,15 +20,15 @@ const FormularioArirang = ({ onSubmit }: FormularioArirangProps) => {
           data-testid="title"
           className="text-3xl flex flex-col w-full items-center justify-center px-4  max-md:text-xl  text-center font-bold uppercase max-sm:text-md space-y-0 text-red-600"
         >
-          <span className=" bg-arirangWhiteTag object-contain px-6 py-2.5 mx-12 rotate-[-7deg] translate-x-[-5%]   z-90   ">
+          <span className={`${tagsStyles} object-contain px-6 py-2.5 mx-12 rotate-[-7deg] translate-x-[-5%]   z-90`}>
             What is
           </span>
 
-          <span className=" px-8 py-2 bg-arirangWhiteTag rotate-[8deg] translate-x-[-1%]   z-60 ">
+          <span className={`${tagsStyles} rotate-[8deg] translate-x-[-1%]   z-60`}>
             your
           </span>
 
-          <span className="px-8 py-2  bg-arirangWhiteTag z--1000">
+          <span className={`${tagsStyles} z--1000`}>
             love song?
           </span>
         </div>
