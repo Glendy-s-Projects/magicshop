@@ -1,5 +1,3 @@
-"use server";
-
 import { SpotifyAlbum } from "@/types/types.spotify";
 import { getTokenSpotify, getAllArtistAlbums, getAlbumTracks } from "./handlerSpotify";
 
