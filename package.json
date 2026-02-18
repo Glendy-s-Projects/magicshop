@@ -21,6 +21,7 @@
     "check:all": "npm run eslint && npm run test && npm run build "
   },
   "dependencies": {
+    "@base-ui/react": "^1.2.0",
     "@dnd-kit/core": "^6.3.1",
     "@dnd-kit/sortable": "^10.0.0",
     "@dnd-kit/utilities": "^3.2.2",
@@ -41,6 +42,7 @@
     "html2canvas-pro": "^1.5.8",
     "lucide-react": "^0.563.0",
     "next": "^15.3.6",
+    "radix-ui": "^1.4.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-easy-crop": "^5.4.1",

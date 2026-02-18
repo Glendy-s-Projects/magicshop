@@ -229,6 +229,21 @@
   background-size: cover;
 }
 
+.bg-arirangRedTag {
+  background-image: url("/arirang/redtags.webp");
+  background-repeat: repeat-x;
+}
+
+.bg-arirangRedTag2 {
+  background-image: url("/arirang/redTag.webp");
+  background-repeat: repeat-x;
+}
+
+.bg-arirangWhiteTag {
+  background-image: url("/arirang/whiteTag.webp");
+  background-repeat: repeat-x;
+}
+
 .loader {
   position: relative;
   width: 120px;

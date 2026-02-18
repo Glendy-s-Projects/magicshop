@@ -64,7 +64,7 @@ export default function RootLayout({
                               <SidebarProvider>
                                 <AppSidebar />
                                 <SidebarInset className="relative overflow-y-auto">
-                                  <SidebarTrigger className="absolute top-4 left-4 z-10" />
+                                  <SidebarTrigger className="absolute top-4 left-4 z-50" />
                                   {children}
                                 </SidebarInset>
                               </SidebarProvider>

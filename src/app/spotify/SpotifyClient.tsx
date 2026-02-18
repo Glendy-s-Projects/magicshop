@@ -8,8 +8,13 @@ interface SpotifyClientProps {
   artistsData: Record<string, SpotifyData>;
 }
 
-export default function SpotifyClient({ artists, artistsData }: SpotifyClientProps) {
-  const loadArtistData = async (artistId: string): Promise<SpotifyData | null> => {
+export default function SpotifyClient({
+  artists,
+  artistsData,
+}: SpotifyClientProps) {
+  const loadArtistData = async (
+    artistId: string,
+  ): Promise<SpotifyData | null> => {
     return artistsData[artistId] || null;
   };
 

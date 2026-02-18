@@ -16,6 +16,7 @@ export type UsuarioType = {
   content: string;
   diseño: string;
   song?: string;
+  album?: string;
 };
 
 export type AllProviderProps = {
@@ -40,6 +41,8 @@ export type RequestInfoContextType = {
   // cardData: string | null;
   showForm: boolean;
   downloadLabel: string;
+  selectedAlbum: string | null;
+  generatedSong: string | null;
   setUsuario: (usuario: UsuarioType) => void;
   setResultado: (resultado: UsuarioType) => void;
   setCargando: (cargando: boolean) => void;
@@ -55,6 +58,9 @@ export type RequestInfoContextType = {
   setSelectedMembers: (selectedMembers: string | null) => void;
   setShowForm: (showForm: boolean) => void;
   setDownloadLabel: (downloadLabel: string) => void;
+  setSelectedAlbum: (selectedAlbum: string | null) => void;
+  setGeneratedSong: (generatedSong: string | null) => void;
+  generateRandomSong: () => Promise<void>;
   maxCharLimit: number;
   maxCharLimitH: number;
   maxFromLimitH: number;
@@ -83,6 +89,8 @@ export type RequestInfoContextType = {
 
   loading: boolean;
   setLoading: (loading: boolean) => void;
+  albums: { id: string; name: string }[];
+  setAlbums: (albums: { id: string; name: string }[]) => void;
 };
 
 export type BtsPhrases = {

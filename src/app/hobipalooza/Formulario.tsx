@@ -21,7 +21,11 @@ const Formulario = () => {
         height={185}
       />
       <div className=" w-full px-10 text-center">
-        <form  data-testid="form" className="mt-5 flex flex-col gap-2" onSubmit={handleSubmit}>
+        <form
+          data-testid="form"
+          className="mt-5 flex flex-col gap-2"
+          onSubmit={handleSubmit}
+        >
           <InputNameUtils
             placeholder="Use your X @username"
             className="w-full bg-white text-black border-black placeholder:text-gray-400 text-center"
