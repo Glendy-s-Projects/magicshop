@@ -1,3 +1,5 @@
+"use server";
+
 import { SpotifyAlbum } from "@/types/types.spotify";
 import { getTokenSpotify, getAllArtistAlbums, getAlbumTracks } from "./handlerSpotify";
 import { unstable_cache } from "next/cache";
