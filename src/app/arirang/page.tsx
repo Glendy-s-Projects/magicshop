@@ -6,6 +6,7 @@ import FormularioArirang from "./formulario";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import ResultadoArirang from "./ResultadoArirang";
 import ArirangTags from "./components/ArirangTags";
+import { getBTSAlbums } from "@/services/btsAlbums";
 
 const arirang = [
   {
@@ -24,15 +25,15 @@ const arirang = [
 
 const LoaderArirang = () => {
   return (
-    <div className="arirang-loader">
+    <div className={`arirang-loader`}>
       {arirang.map((item, index) => (
         <Image
           key={index}
           src={item.image}
           alt={item.title}
           className="arirang-image object-contain"
-          width={40}
-          height={40}
+          width={100}
+          height={100}
         />
       ))}
     </div>
@@ -43,7 +44,24 @@ const Arirang = () => {
   const [initialLoading, setInitialLoading] = useState(true);
   const [showLoader, setShowLoader] = useState(false);
   const [showResult, setShowResult] = useState(false);
-  const { handleSubmit, handleResetContent } = useRequestInfo();
+  const { handleSubmit, handleResetContent, setAlbums, generateRandomSong } =
+    useRequestInfo();
+
+  useEffect(() => {
+    const loadAlbums = async () => {
+      try {
+        const albums = await getBTSAlbums();
+        const albumOptions = albums.map((album) => ({
+          id: album.id,
+          name: album.name,
+        }));
+        setAlbums(albumOptions);
+      } catch (error) {
+        console.error("Error loading albums:", error);
+      }
+    };
+    loadAlbums();
+  }, [setAlbums]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -52,14 +70,21 @@ const Arirang = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setShowLoader(true);
-    setTimeout(() => {
-      handleSubmit(e);
+
+    try {
+      await generateRandomSong();
+      setTimeout(() => {
+        handleSubmit(e);
+        setShowLoader(false);
+        setShowResult(true);
+      }, 3000);
+    } catch (error) {
+      console.error("Error generating song:", error);
       setShowLoader(false);
-      setShowResult(true);
-    }, 3000);
+    }
   };
 
   const handleReset = () => {
@@ -68,30 +93,10 @@ const Arirang = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col px-8 items-center justify-center overflow-hidden relative">
-      {/* <div className="">
-        <iframe
-          data-testid="embed-iframe"Z
-          style={{
-            borderRadius: "12px",
-            display: initialLoading ? "block" : "none",
-          }}
-          src="https://open.spotify.com/embed/prerelease/1DcxHW214MCDxXju71RbvX?utm_source=generator"
-          width="100%"
-          height="352"
-          frameBorder="0"
-          allowFullScreen={false}
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="eager"
-        ></iframe>
-      </div> */}
+    <div className="h-screen  overflow-hidden relative ">
       <ArirangTags />
 
-      <div className="flex flex-col min-h-screen w-full items-center justify-center z-10 relative ">
-        <h1 className="text-4xl font-extrabold uppercase text-red-700">
-          Arirang
-        </h1>
-
+      <div className="flex flex-col min-h-screen w-full items-center justify-center z-10 relative bg-black/20 ">
         {initialLoading ? (
           <LoaderArirang />
         ) : showLoader ? (
@@ -101,7 +106,6 @@ const Arirang = () => {
         ) : (
           <FormularioArirang onSubmit={handleFormSubmit} />
         )}
-        {/* <ResultadoArirang onReset={handleReset} /> */}
       </div>
     </div>
   );

@@ -1,83 +1,115 @@
+import useDarkMode from "@/hooks/useDarkMode";
 import useDownload from "@/hooks/useDownload";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import { ButtonUtils } from "@/utils/ButtonUtils";
-import React from "react";
 
 interface ResultadoArirangProps {
   onReset?: () => void;
 }
 
 const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
-  const { usuario, handleResetContent } = useRequestInfo();
+  const { usuario, handleResetContent, resultado } = useRequestInfo();
+  const { darkSide } = useDarkMode();
   const { name } = usuario;
   const { handleDownloadImage } = useDownload();
 
-  const tagsStyles =
-    "  bg-arirangRedTag object-contain  px-4   w-36 text-2xl max-h-10  translate-x-[-5%]  absolute ";
+  const songName = usuario?.song || resultado?.song || "Arirang";
+
+  const tagsStyles = `${darkSide ? "bg-arirangWhiteTag" : "bg-arirangRedTag2"} bg-contain bg-no-repeat  px-2   w-56 text-4xl py-2   translate-x-[-5%]  absolute`;
 
   return (
-    <div className="w-96 h-96 relative">
-      <div
-        className={`bg-white h-full flex flex-col items-center justify-center `}
-        id="print"
-      >
+    <>
+      <div>
+        <iframe
+          data-testid="modal-iframe"
+          style={{ borderRadius: "12px" }}
+          src="https://open.spotify.com/embed/prerelease/1DcxHW214MCDxXju71RbvX?utm_source=generator"
+          width="300"
+          height="100"
+          frameBorder="0"
+          allowFullScreen={false}
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="eager"
+        />
+      </div>
+      <div className="w-64 h-96 relative">
         <div
-          data-testid="title"
-          className=" flex-col w-full items-center justify-center px-2 mx-2 max-md:text-xl  text-center font-bold uppercase max-sm:text-md space-y-0 text-white"
+          className={`${darkSide ? "bg-[#f5193b]" : "bg-white"} h-full flex flex-col items-center justify-center rounded-2xl `}
+          id="print"
         >
-          <span
-            className={`${tagsStyles} pr-10 pt-1  pb-1 rotate-[5deg] z-90 top-9 left-8`}
+          <div
+            data-testid="title"
+            className={`flex flex-col w-full h-full pb-10 items-end justify-end px-2 mx-2  text-center font-bold uppercase max-sm:text-md   ${darkSide ? "text-red-600" : "text-black"}`}
           >
-            My
-          </span>
+            <div>
+              <span
+                className={`${tagsStyles} pr-10 z-90 top-9 left-8`}
+                style={{ transform: "rotate(5deg)" }}
+              >
+                My
+              </span>
 
-          <span
-            className={`${tagsStyles}   pr-16 pb-1 rotate-[-1deg]   z-80  top-17 left-8`}
-          >
-            Love
-          </span>
+              <span
+                className={`${tagsStyles}   pr-16 pb-1   z-80  top-20 left-8`}
+                style={{ transform: "rotate(-1deg)" }}
+              >
+                Love
+              </span>
 
-          <span
-            className={`${tagsStyles}  pr-9 pb-1 rotate-[5deg]   z-70  top-24 left-10`}
-          >
-            Song
-          </span>
+              <span
+                className={`${tagsStyles}  pr-9 pb-1    z-70  top-28 left-10`}
+                style={{ transform: "rotate(5deg)" }}
+              >
+                Song
+              </span>
 
-          <span
-            className={`${tagsStyles}  pr-15 pb-1 rotate-[-5deg]   z-60  top-31 left-7`}
-          >
-            is
-          </span>
+              <span
+                className={`${tagsStyles}  pr-15 pb-1    z-60  top-36 left-7`}
+                style={{ transform: "rotate(-5deg)" }}
+              >
+                is
+              </span>
+            </div>
 
-          <span
-            className={`${tagsStyles} px-18 w-56  pr-16  max-12 rotate-[5deg]   z-50  top-40 left-10`}
+            <div className="flex flex-col items-center justify-center px-0 gap-4">
+              <span
+                className={` ${darkSide ? "bg-arirangWhiteTag" : "bg-arirangRedTag2"} bg-cover   px-6 w-full      `}
+              >
+                <span className="text-red-900 text-3xl"> (</span>
+                <span className="max-sm:text-xs text-xs">{songName}</span>
+                <span className="text-red-900 text-3xl"> ) </span>
+              </span>
+              <span
+                className={` ${darkSide ? "bg-arirangWhiteTag" : "bg-arirangRedTag2"} bg-cover w-44 py-2   text-xs   `}
+                style={{ transform: "rotate(-12deg)" }}
+              >
+                {name}
+              </span>
+            </div>
+          </div>
+
+          <h1
+            className={`w-full text-end text-xs p-2 font-extrabold ${darkSide ? "text-white" : "text-[#f5193b]"}`}
           >
-            {}
-            <span> (</span>
-            <span> ) </span>
-            <span
-              className={` ${tagsStyles} w-44 text-xs py-2 pr-16 pb-1 max-12 rotate-[5deg] z-50 top-40 left-15`}
-            >
-              {name}
-            </span>
-          </span>
+            ARIRANG
+          </h1>
+        </div>
+
+        <div className="flex items-center justify-center gap-2 pt-2 z-50 ">
+          <ButtonUtils
+            label="Download"
+            onClick={handleDownloadImage}
+            className="bg-black text-white py-2 px-4 cursor-pointer"
+            disableColors="disabled:bg-opacity-25 disabled:cursor-not-allowed  "
+          />
+          <ButtonUtils
+            label="Restart"
+            onClick={onReset || handleResetContent}
+            className="bg-black text-white py-2 px-4 cursor-pointer"
+          />
         </div>
       </div>
-
-      <div className="flex items-center justify-center gap-2 pt-2">
-        <ButtonUtils
-          label="Download"
-          onClick={handleDownloadImage}
-          className="bg-black text-white py-2 px-4"
-          disableColors="disabled:bg-opacity-25 disabled:cursor-not-allowed "
-        />
-        <ButtonUtils
-          label="Restart"
-          onClick={onReset || handleResetContent}
-          className="bg-black text-white py-2 px-4 cursor-pointer"
-        />
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -6,19 +6,15 @@ import Image from "next/image";
 import useDownload from "@/hooks/useDownload";
 
 const Resultado = () => {
-  const {
-    usuario,
-    handleResetContent,
-    isMobile,
-  } = useRequestInfo();
-  const { handleDownloadImage} = useDownload()
+  const { usuario, handleResetContent, isMobile } = useRequestInfo();
+  const { handleDownloadImage } = useDownload();
   const { name, content, diseño } = usuario;
 
   const selectedStyleMember = isMobile
     ? festaBts.find((styleMember) => styleMember.name === "Vertical Style")
     : festaBts.find((styleMember) => styleMember.name === "Square Style");
   const selectedStyle = selectedStyleMember?.styles.find(
-    (style) => style.name === diseño
+    (style) => style.name === diseño,
   );
 
   return (
@@ -35,8 +31,9 @@ const Resultado = () => {
         )}
 
         <div
-          className={`absolute inset-0 flex flex-col font-extrabold items-center justify-end  rotate ${isMobile ? "mb-16" : "pb-[5rem]"
-            }`}
+          className={`absolute inset-0 flex flex-col font-extrabold items-center justify-end  rotate ${
+            isMobile ? "mb-16" : "pb-[5rem]"
+          }`}
           style={{ transform: "rotate(-12deg)" }}
         >
           <div
@@ -64,6 +61,6 @@ const Resultado = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Resultado;

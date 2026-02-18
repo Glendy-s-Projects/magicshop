@@ -9,12 +9,13 @@ const SelectUtils = ({
   options,
   disabled = false,
   className,
+  labelStyles,
   onChange
 }: SelectUtilsProps) => {
   const { usuarioGenerado } = useRequestInfo();
   return (
     <div className="flex flex-col">
-      <label htmlFor={id} className="text-sm  block">
+      <label htmlFor={id} className={`text-sm block ${labelStyles || ""}`}>
         {label}
       </label>
       <select

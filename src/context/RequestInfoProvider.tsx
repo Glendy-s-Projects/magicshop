@@ -14,6 +14,7 @@ import {
 } from "../types";
 import { citiesVisited } from "@/vpassport/Data/citiesVisited";
 import useDownload from "@/hooks/useDownload";
+import { getRandomSongFromAlbum } from "@/services/btsAlbums";
 
 const RequestInfoContext = createContext<RequestInfoContextType>(null!);
 
@@ -23,6 +24,7 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
     content: "",
     diseño: "",
     song: "",
+    album: "",
   });
   const [resultado, setResultado] = useState<UsuarioType | null>(null);
   const [cargando, setCargando] = useState<boolean>(true);
@@ -44,6 +46,9 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
   // const [cardData, setCardData] = useState<{ image: string } | null>(null);
   const [showForm, setShowForm] = useState<boolean>(false);
   const [downloadLabel, setDownloadLabel] = useState<string>("Download");
+  const [selectedAlbum, setSelectedAlbum] = useState<string | null>(null);
+  const [generatedSong, setGeneratedSong] = useState<string | null>(null);
+  const [albums, setAlbums] = useState<{ id: string; name: string }[]>([]);
   const { handleDownloadImage } = useDownload();
 
   const maxCharLimit = 281;
@@ -154,7 +159,8 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
   const generarUsuario = (dato: UsuarioType) => {
     setCargando(true);
     try {
-      setResultado(dato);
+      const updatedData = { ...dato, song: generatedSong || dato.song };
+      setResultado(updatedData);
       setCargando(false);
     } catch (error) {
       console.log(error);
@@ -163,10 +169,12 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
 
   const handleResetContent = () => {
     setCargando(true);
-    setUsuario({ name: "", content: "", diseño: "", song: "" });
+    setUsuario({ name: "", content: "", diseño: "", song: "", album: "" });
     setCharCount(0);
     setCharCountFrom(0);
     setDownloadLabel("Download");
+    setSelectedAlbum(null);
+    setGeneratedSong(null);
   };
 
   const randomIndex = Math.floor(Math.random() * citiesVisited.length);
@@ -187,6 +195,20 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
   const handleDownload = async () => {
     setDownloadLabel("Downloading...");
     await handleDownloadImage();
+  };
+
+  const generateRandomSong = async () => {
+    if (!selectedAlbum) return;
+    
+    try {
+      const randomSong = await getRandomSongFromAlbum(selectedAlbum);
+      if (randomSong) {
+        setGeneratedSong(randomSong);
+        setUsuario(prev => ({ ...prev, song: randomSong }));
+      }
+    } catch (error) {
+      console.error("Error generating random song:", error);
+    }
   };
 
   const [loading, setLoading] = useState(false);
@@ -220,6 +242,10 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
         isMobile,
         selectedMembers,
         showForm,
+        downloadLabel,
+        selectedAlbum,
+        generatedSong,
+        albums,
         setUsuario,
         setResultado,
         setCargando,
@@ -234,13 +260,15 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
         setIsMobile,
         setSelectedMembers,
         setShowForm,
+        setDownloadLabel,
+        setSelectedAlbum,
+        setGeneratedSong,
+        setAlbums,
         maxCharLimit,
         maxCharLimitH,
         maxFromLimitH,
         image,
         stamp,
-        downloadLabel,
-        setDownloadLabel,
         //TODO: FUNCTIONS
         generateWordDisplay,
         handleCorrectWord,
@@ -255,6 +283,7 @@ const RequestInfoProvider = ({ children }: AllProviderProps) => {
         isMaxCharLimitReachedH,
         isMaxFromLimitReachedH,
         handleDownload,
+        generateRandomSong,
 
         // loader
 

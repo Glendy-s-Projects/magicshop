@@ -230,17 +230,18 @@
 }
 
 .bg-arirangRedTag {
-  background-image: url("/arirang/label.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-image: url("/arirang/redtags.webp");
+  background-repeat: repeat-x;
+}
+
+.bg-arirangRedTag2 {
+  background-image: url("/arirang/redTag.webp");
+  background-repeat: repeat-x;
 }
 
 .bg-arirangWhiteTag {
   background-image: url("/arirang/whiteTag.webp");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-repeat: repeat-x;
 }
 
 .loader {
