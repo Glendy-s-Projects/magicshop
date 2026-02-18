@@ -19,9 +19,11 @@ const getBTSAlbumsUncached = async (): Promise<SpotifyAlbum[]> => {
   }
 };
 
+// Cache the BTS albums data for 24 hours using Next.js server-side caching
+// Note: unstable_cache is the standard way to cache server functions in Next.js App Router
 export const getBTSAlbums = unstable_cache(
   getBTSAlbumsUncached,
-  ["getBTSAlbums"],
+  ["getBTSAlbums"], // Unique cache key for this function
   {
     revalidate: 86400 // 24 hours in seconds
   }
