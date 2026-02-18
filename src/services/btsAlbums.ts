@@ -21,10 +21,9 @@ const getBTSAlbumsUncached = async (): Promise<SpotifyAlbum[]> => {
 
 export const getBTSAlbums = unstable_cache(
   getBTSAlbumsUncached,
-  ["bts-albums"],
+  ["getBTSAlbums"],
   {
-    revalidate: 86400, // 24 hours in seconds
-    tags: ["bts-albums"]
+    revalidate: 86400 // 24 hours in seconds
   }
 );
 
