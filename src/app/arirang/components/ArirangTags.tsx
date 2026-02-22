@@ -16,7 +16,7 @@ const ArirangTags = () => {
       <ArirangTag
         title={"WHAT IS YOUR LOVE SONG? ARIRANG ".repeat(15)}
         color="bg-white"
-        textColor="text-red-700"
+        textColor="text-[#f5193b]"
         transform={`rotate-[75deg] translate-x-[-40%] translate-y-[-50%] z-10`}
         textSize="text-4xl"
       />
@@ -37,7 +37,7 @@ const ArirangTags = () => {
       <ArirangTag
         title={"WHAT IS YOUR LOVE SONG? ARIRANG ".repeat(15)}
         color="bg-arirangRedTag mix-blend-multiply"
-        textColor="text-red-700"
+        textColor="text-[#f5193b]"
         transform={`rotate-[9deg] translate-x-[-61%] translate-y-[-55%] z-10`}
         textSize="text-4xl"
       />
@@ -87,14 +87,14 @@ const ArirangTags = () => {
       <ArirangTag
         title={RIBBONS_TITLE}
         color="bg-white"
-        textColor="text-red-700"
+        textColor="text-[#f5193b]"
         transform={`rotate-[80deg] translate-x-[-57%] translate-y-[-50%] z-10`}
         textSize="text-4xl"
       />
       <ArirangTag
         title={RIBBONS_TITLE}
         color="bg-white"
-        textColor="text-red-700"
+        textColor="text-[#f5193b]"
         transform={`rotate-[-62deg] translate-x-[-52%] translate-y-[-50%] z-10`}
         textSize="text-4xl"
       />
@@ -123,7 +123,7 @@ const ArirangTags = () => {
       <ArirangTag
         title={"WHAT IS YOUR LOVE SONG? ARIRANG ".repeat(15)}
         color="bg-white"
-        textColor="text-red-700"
+        textColor="text-[#f5193b]"
         transform={`rotate-[80deg] translate-x-[-57%] translate-y-[-50%]`}
         textSize="text-4xl"
       />
@@ -144,7 +144,7 @@ const ArirangTags = () => {
       <ArirangTag
         title={RIBBONS_TITLE}
         color="bg-white"
-        textColor="text-red-700"
+        textColor="text-[#f5193b]"
         transform={`rotate-[20deg] translate-x-[-18%] translate-y-[-95%] z-10`}
         textSize="text-4xl"
       />
@@ -165,7 +165,7 @@ const ArirangTags = () => {
       <ArirangTag
         title={RIBBONS_TITLE}
         color="bg-white"
-        textColor="text-red-700"
+        textColor="text-[#f5193b]"
         transform={`rotate-[17deg] translate-x-[-100%] translate-y-[-80%] z-10`}
         textSize="text-4xl"
       />

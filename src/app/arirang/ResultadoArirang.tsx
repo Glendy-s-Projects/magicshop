@@ -2,6 +2,7 @@ import useDarkMode from "@/hooks/useDarkMode";
 import useDownload from "@/hooks/useDownload";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import { ButtonUtils } from "@/utils/ButtonUtils";
+import ResultadoArirangPt2 from "./Resultadopt2";
 
 interface ResultadoArirangProps {
   onReset?: () => void;
@@ -32,6 +33,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
           loading="eager"
         />
       </div>
+
       <div className="w-64 h-96 relative">
         <div
           className={`${darkSide ? "bg-[#f5193b]" : "bg-white"} h-full flex flex-col items-center justify-center rounded-2xl `}
@@ -50,7 +52,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
               </span>
 
               <span
-                className={`${tagsStyles}   pr-16 pb-1   z-80  top-20 left-8`}
+                className={`${tagsStyles}   pr-16 pb-1   z-80  top-20 left-8 translate-x-[-1%] `}
                 style={{ transform: "rotate(-1deg)" }}
               >
                 Love
@@ -95,6 +97,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
           </h1>
         </div>
 
+
         <div className="flex items-center justify-center gap-2 pt-2 z-50 ">
           <ButtonUtils
             label="Download"
@@ -108,9 +111,13 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
             className="bg-black text-white py-2 px-4 cursor-pointer"
           />
         </div>
+
+            < ResultadoArirangPt2/>
+            
       </div>
     </>
   );
 };
 
 export default ResultadoArirang;
+

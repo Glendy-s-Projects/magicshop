@@ -15,6 +15,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Antonio&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Monoton&display=swap");
+
+
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:where(.dark, .dark *));
@@ -116,6 +118,8 @@
 .font-monoton {
   font-family: "Monoton", cursive;
 }
+
+
 
 .bg-main {
   background-image: url("/Wallpapers/BackgroundHOME_VercelBA2.webp");
@@ -242,6 +246,41 @@
 .bg-arirangWhiteTag {
   background-image: url("/arirang/whiteTag.webp");
   background-repeat: repeat-x;
+}
+
+.bg-ribbon2 {
+  background-image: url("/arirang/ribbon2.webp");
+  background-repeat: no-repeat;
+}
+
+.bg-ribbon3 {
+  background-image: url("/arirang/ribbon3.webp");
+  background-repeat: no-repeat;
+}
+
+.bg-ribbonLove {
+  background-image: url("/arirang/ribbon4.webp");
+  background-repeat: no-repeat;
+}
+
+.bg-ribbonSong {
+  background-image: url("/arirang/WIYLSong.webp");
+  background-repeat: no-repeat;
+}
+
+.bg-ribbon6 {
+  background-image: url("/arirang/ribbon6.webp");
+  background-repeat: no-repeat;
+}
+
+.bg-ribbonHeart {
+  background-image: url("/arirang/heartRibbon.webp");
+  background-repeat: no-repeat;
+}
+
+.bg-ribbon8 {
+  background-image: url("/arirang/ribbon8.webp");
+  background-repeat: no-repeat;
 }
 
 .loader {
