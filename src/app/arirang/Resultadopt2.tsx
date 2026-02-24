@@ -1,18 +1,8 @@
-//import useDarkMode from "@/hooks/useDarkMode";
-import useDownload from "@/hooks/useDownload";
 import useRequestInfo from "@/hooks/useRequestInfo";
 
-interface ResultadoArirangProps {
-  onReset?: () => void;
-}
-
-const ResultadoArirangPt2 = ({ onReset }: ResultadoArirangProps) => {
-  const { usuario, handleResetContent, resultado } = useRequestInfo();
-  //const { darkSide } = useDarkMode();
+const Resultadopt2 = () => {
+  const { usuario } = useRequestInfo();
   const { name } = usuario;
-  const { handleDownloadImage } = useDownload();
-
-  //const songName = usuario?.song || resultado?.song || "Arirang";
 
   const tagsStyles = `bg-contain bg-no-repeat text-4xl py-2 translate-x-[-5%] w-56 absolute`;
 
@@ -52,40 +42,40 @@ const ResultadoArirangPt2 = ({ onReset }: ResultadoArirangProps) => {
 
             <div className="bg-indigo-600">
               <span
-                className={` ${tagsStyles} ${"bg-ribbon2"} h-18 bg-cover w-60 left-5 top-17 pr-22 z-20 whitespace-nowrap py-4`}
+                className={` ${tagsStyles} ${"bg-ribbon2"} h-16 bg-cover w-60 left-5 top-16 pr-[68px] z-20 whitespace-nowrap py-4`}
                 style={{ transform: "rotate(-1deg)" }}
               >
                 WHAT IS
               </span>
 
               <span
-                className={`${tagsStyles} ${"bg-ribbon3"} pr-36 py-10 pb-1 z-10 top-22 left-8`}
+                className={`${tagsStyles} ${"bg-ribbon3"} pr-36 py-10 pb-1 z-10 top-[87px] left-8`}
                 style={{ transform: "rotate(1deg)" }}
               >
                 YOUR
               </span>
 
               <span
-                className={`${"bg-ribbonLove"} ${tagsStyles}  pr-22 pt-3 z-80 top-39 left-4`}
+                className={`${"bg-ribbonLove"} ${tagsStyles} pr-24 pt-3 z-80 top-[155px] left-4`}
                 style={{ transform: "rotate(0deg)" }}
               >
                 LOVE
               </span>
 
               <span
-                className={`${"bg-ribbonSong"} ${tagsStyles} pr-10 px-2 h-18 z-60 top-52 left-2 translate-x-[-8%] `}
+                className={`${"bg-ribbonSong"} ${tagsStyles} pr-10 px-2 h-[73px] z-60 top-52 left-2 translate-x-[-8%] `}
                 style={{ transform: "rotate(2deg)" }}
               >
                 SONG?
               </span>
 
               <span
-                className={`${"bg-ribbon6"} pr-20 h-19 w-36 z-10 py-4 top-62 left-2 bg-cover absolute`}
+                className={`${"bg-ribbon6"} pr-20 h-20 w-36 z-10 py-4 top-64 left-2 bg-cover absolute`}
                 style={{ transform: "rotate(-4deg)" }}
               ></span>
             </div>
 
-            <div className="flex flex-col justify-center items-center w-18">
+            <div className="flex flex-col justify-center items-center w-16">
               <div className="pl-2">
                 <span
                   className={`${"bg-ribbonHeart"} px-14 inline-block h-14 bg-cover`}
@@ -107,4 +97,4 @@ const ResultadoArirangPt2 = ({ onReset }: ResultadoArirangProps) => {
   );
 };
 
-export default ResultadoArirangPt2;
+export default Resultadopt2;

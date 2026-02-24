@@ -10,9 +10,9 @@ import { getBTSAlbums } from "@/services/btsAlbums";
 
 import localFont from "next/font/local";
 
-const myFont = localFont( {
+const myFont = localFont({
   src: "../../../public/Akzidenz_Grotesk_Next_Medium.otf",
-})
+});
 
 
 

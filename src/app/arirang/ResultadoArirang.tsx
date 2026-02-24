@@ -2,7 +2,7 @@ import useDarkMode from "@/hooks/useDarkMode";
 import useDownload from "@/hooks/useDownload";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import { ButtonUtils } from "@/utils/ButtonUtils";
-import ResultadoArirangPt2 from "./Resultadopt2";
+import Resultadopt2 from "./Resultadopt2";
 
 interface ResultadoArirangProps {
   onReset?: () => void;
@@ -112,7 +112,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
           />
         </div>
 
-            < ResultadoArirangPt2/>
+            <Resultadopt2/>
             
       </div>
     </>
