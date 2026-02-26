@@ -8,6 +8,7 @@ interface ResultadoArirangCardProps {
 const ResultadoCard1 = ( { usuario, resultado, darkSide, isActive } : ResultadoArirangCardProps) => {
 
     const songName = usuario?.song || resultado?.song || "Arirang";
+    const { name } = usuario;
 
 
     const tagsStyles = `${darkSide ? "bg-arirangWhiteTag" : "bg-arirangRedTag2"} bg-contain bg-no-repeat px-2 w-56 text-4xl py-2 translate-x-[-5%] absolute`;
@@ -25,28 +26,28 @@ const ResultadoCard1 = ( { usuario, resultado, darkSide, isActive } : ResultadoA
         >
           <div>
             <span
-              className={`${tagsStyles} pr-10 z-90 top-9 left-8`}
+              className={`${tagsStyles} pr-10 z-50 top-9 left-8`}
               style={{ transform: "rotate(5deg)" }}
             >
               My
             </span>
 
             <span
-              className={`${tagsStyles}   pr-16 pb-1   z-80  top-20 left-8 translate-x-[-1%] `}
+              className={`${tagsStyles}   pr-16 pb-1 z-40  top-20 left-8 translate-x-[-1%] `}
               style={{ transform: "rotate(-1deg)" }}
             >
               Love
             </span>
 
             <span
-              className={`${tagsStyles}  pr-9 pb-1    z-70  top-28 left-10`}
+              className={`${tagsStyles}  pr-9 pb-1 z-30  top-30 left-10`}
               style={{ transform: "rotate(5deg)" }}
             >
               Song
             </span>
 
             <span
-              className={`${tagsStyles}  pr-15 pb-1    z-60  top-36 left-7`}
+              className={`${tagsStyles}  pr-16 pb-1    z-20  top-36 left-7`}
               style={{ transform: "rotate(-5deg)" }}
             >
               is
@@ -65,7 +66,7 @@ const ResultadoCard1 = ( { usuario, resultado, darkSide, isActive } : ResultadoA
               className={` ${darkSide ? "bg-arirangWhiteTag" : "bg-arirangRedTag2"} bg-cover w-44 py-2   text-xs   `}
               style={{ transform: "rotate(-12deg)" }}
             >
-              {usuario?.name}
+              {name}
             </span>
           </div>
         </div>

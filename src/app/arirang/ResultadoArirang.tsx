@@ -3,7 +3,7 @@ import useDarkMode from "@/hooks/useDarkMode";
 import useDownload from "@/hooks/useDownload";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import { ButtonUtils } from "@/utils/ButtonUtils";
-import { Carousel, CarouselContent, CarouselItem, type CarouselApi}
+import { type CarouselApi}
    from "@/hooks/components/ui/carousel";
 import ResultadoCarousel from "./components/ResultadoCarousel";
 import Switcher  from '@/utils/Switcher';
@@ -35,7 +35,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
     };
   }, [emblaApi]);
 
-  const handleDowloadActiveCard = () => {
+  const handleDownloadActiveCard = () => {
     handleDownloadImage();
   };
 
@@ -65,7 +65,6 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
         resultado={resultado}
         darkSide={darkSide}
         activeIndex={activeIndex}
-        onChangeIndex={setActiveIndex}
         setApi={setEmblaApi}
     />
 
@@ -73,7 +72,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
         <div className="flex items-center justify-center gap-2 pt-2 z-50 ">
           <ButtonUtils
             label="Download"
-            onClick={handleDowloadActiveCard}
+            onClick={handleDownloadActiveCard}
             className="bg-black text-white py-2 px-4 cursor-pointer"
             disableColors="disabled:bg-opacity-25 disabled:cursor-not-allowed  "
           />

@@ -21,6 +21,7 @@ const eslintConfig = [
       "public/**",
       "coverage/**",
       "dist/**",
+      "next-env.d.ts"
     ],
   },
   ...compat.extends("plugin:testing-library/react"),

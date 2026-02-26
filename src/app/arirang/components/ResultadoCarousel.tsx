@@ -1,7 +1,7 @@
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type 
     CarouselApi } from "@/hooks/components/ui/carousel";
 import ResultadoCard1 from "../ResultadoCard1";
-import ResultadoArirangpt2 from "../Resultadopt2";
+import ResultadoCard2 from "../ResultadoCard2";
 
 
 interface ResultadoCarouselProps {
@@ -9,7 +9,6 @@ interface ResultadoCarouselProps {
     resultado: { song?: string} | null;
     darkSide: boolean;
     activeIndex: number;
-    onChangeIndex: (newIndex: number) => void;
     setApi?: (api: CarouselApi) => void;
 }
 
@@ -28,7 +27,7 @@ const ResultadoCarousel = ( { usuario, resultado, darkSide, activeIndex, setApi 
                     />
                 </CarouselItem>
                 <CarouselItem>
-                    <ResultadoArirangpt2 
+                    <ResultadoCard2
                     usuario={usuario}
                     isActive={activeIndex === 1}
                      />
