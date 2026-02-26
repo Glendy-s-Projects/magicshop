@@ -16,8 +16,6 @@ const myFont = localFont({
 
 
 
-
-
 const arirang = [
   {
     image: "/arirang/a.png",
@@ -112,7 +110,7 @@ const Arirang = () => {
         ) : showLoader ? (
           <LoaderArirang />
         ) : showResult ? (
-          <ResultadoArirang onReset={handleReset} />
+            <ResultadoArirang onReset={handleReset} />
         ) : (
           <FormularioArirang onSubmit={handleFormSubmit} />
         )}

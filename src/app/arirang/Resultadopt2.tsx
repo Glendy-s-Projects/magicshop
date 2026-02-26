@@ -1,31 +1,19 @@
-import useRequestInfo from "@/hooks/useRequestInfo";
+interface ResultadoArirang2CardProps {
+  usuario: { name?: string; song?: string};
+  isActive: boolean;
+}
 
-const Resultadopt2 = () => {
-  const { usuario } = useRequestInfo();
-  const { name } = usuario;
+const Resultadopt2 = ( { usuario, isActive } : ResultadoArirang2CardProps) => {
+
 
   const tagsStyles = `bg-contain bg-no-repeat text-4xl py-2 translate-x-[-5%] w-56 absolute`;
 
   return (
     <>
-      <div>
-        <iframe
-          data-testid="modal-iframe"
-          style={{ borderRadius: "12px" }}
-          src="https://open.spotify.com/embed/prerelease/1DcxHW214MCDxXju71RbvX?utm_source=generator"
-          width="300"
-          height="100"
-          frameBorder="0"
-          allowFullScreen={false}
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="eager"
-        />
-      </div>
-
       <div className="w-64 h-96 relative">
         <div
           className={`${"bg-white"} h-full flex flex-col items-center justify-center rounded-2xl `}
-          id="print"
+          id={isActive ? "print" : undefined}
         >
           <div
             data-testid="title"
@@ -36,7 +24,7 @@ const Resultadopt2 = () => {
                 className={` ${"bg-arirangRedTag2"} bg-cover py-2 text-sm absolute font-extrabold top-10 left-5 z-30`}
                 style={{ transform: "rotate(-6deg)" }}
               >
-                {name}
+                {usuario?.name}
               </span>
             </div>
 
