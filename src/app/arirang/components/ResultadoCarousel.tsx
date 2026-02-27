@@ -1,5 +1,4 @@
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type 
-    CarouselApi } from "@/hooks/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext, type CarouselApi } from "@/hooks/components/ui/carousel";
 import ResultadoCard1 from "../ResultadoCard1";
 import ResultadoCard2 from "../ResultadoCard2";
 
@@ -13,6 +12,8 @@ interface ResultadoCarouselProps {
 }
 
 const ResultadoCarousel = ( { usuario, resultado, darkSide, activeIndex, setApi }: ResultadoCarouselProps ) => {
+
+    const arrowStyles = "bg-white text-black border-none dark:bg-black dark:text-white hover:bg-gray-500 dark:hover:bg-gray-500";
 
 
     return (
@@ -33,8 +34,8 @@ const ResultadoCarousel = ( { usuario, resultado, darkSide, activeIndex, setApi 
                      />
                 </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious className="hover:bg-[#f5193b]" />
-            <CarouselNext />
+            <CarouselPrevious className={`${arrowStyles}`} />
+            <CarouselNext className={`${arrowStyles}`} />
         </Carousel>
     )
 };

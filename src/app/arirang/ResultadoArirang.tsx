@@ -35,10 +35,6 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
     };
   }, [emblaApi]);
 
-  const handleDownloadActiveCard = () => {
-    handleDownloadImage();
-  };
-
 
   return (
     <>
@@ -72,7 +68,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
         <div className="flex items-center justify-center gap-2 pt-2 z-50 ">
           <ButtonUtils
             label="Download"
-            onClick={handleDownloadActiveCard}
+            onClick={handleDownloadImage}
             className="bg-black text-white py-2 px-4 cursor-pointer"
             disableColors="disabled:bg-opacity-25 disabled:cursor-not-allowed  "
           />
@@ -84,7 +80,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
 
           <div className="flex items-center flex-col justify-center">
             <Switcher />
-            <span className="text-[8px]">{!darkSide ? <span className="text-white">Light</span> : "Dark"}</span>
+            <span className="text-[8px] text-white">{darkSide ? "Dark" : "Light"}</span>
           </div>
           
         </div>

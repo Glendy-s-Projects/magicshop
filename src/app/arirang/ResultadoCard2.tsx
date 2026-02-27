@@ -31,14 +31,14 @@ const ResultadoCard2 = ( { usuario, isActive } : ResultadoArirang2CardProps) => 
 
             <div>
               <span
-                className={` ${tagsStyles} bg-ribbon2 h-16 bg-cover w-60 left-5 top-16 pr-[68px] z-20 whitespace-nowrap py-4`}
+                className={` ${tagsStyles} bg-ribbonWhatIs h-16 bg-cover w-60 left-5 top-16 pr-[68px] z-20 whitespace-nowrap py-4`}
                 style={{ transform: "rotate(-1deg)" }}
               >
                 WHAT IS
               </span>
 
               <span
-                className={`${tagsStyles} bg-ribbon3 pr-36 py-10 pb-1 z-10 top-[87px] left-8`}
+                className={`${tagsStyles} bg-ribbonYour pr-36 py-10 pb-1 z-10 top-[87px] left-8`}
                 style={{ transform: "rotate(1deg)" }}
               >
                 YOUR
@@ -59,7 +59,7 @@ const ResultadoCard2 = ( { usuario, isActive } : ResultadoArirang2CardProps) => 
               </span>
 
               <span
-                className="bg-ribbon6 pr-20 h-20 w-36 z-10 py-4 top-64 left-2 bg-cover absolute"
+                className="bg-ribbonQR pr-20 h-20 w-36 z-10 py-4 top-64 left-2 bg-cover absolute"
                 style={{ transform: "rotate(-4deg)" }}
               ></span>
             </div>
@@ -71,7 +71,7 @@ const ResultadoCard2 = ( { usuario, isActive } : ResultadoArirang2CardProps) => 
                 ></span>
               </div>
 
-              <span className="bg-ribbon8 bg-cover py-8 px-9"></span>
+              <span className="bg-ribbonSquare bg-cover py-8 px-9"></span>
             </div>
           </div>
 

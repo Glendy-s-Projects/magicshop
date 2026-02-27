@@ -116,9 +116,6 @@
 .font-monoton {
   font-family: "Monoton", cursive;
 }
-
-
-
 .bg-main {
   background-image: url("/Wallpapers/BackgroundHOME_VercelBA2.webp");
   background-size: cover;
@@ -246,12 +243,12 @@
   background-repeat: repeat-x;
 }
 
-.bg-ribbon2 {
+.bg-ribbonWhatIs {
   background-image: url("/arirang/ribbon2.webp");
   background-repeat: no-repeat;
 }
 
-.bg-ribbon3 {
+.bg-ribbonYour {
   background-image: url("/arirang/ribbon3.webp");
   background-repeat: no-repeat;
 }
@@ -266,7 +263,7 @@
   background-repeat: no-repeat;
 }
 
-.bg-ribbon6 {
+.bg-ribbonQR {
   background-image: url("/arirang/ribbon6.webp");
   background-repeat: no-repeat;
 }
@@ -276,7 +273,7 @@
   background-repeat: no-repeat;
 }
 
-.bg-ribbon8 {
+.bg-ribbonSquare {
   background-image: url("/arirang/ribbon8.webp");
   background-repeat: no-repeat;
 }
