@@ -8,6 +8,14 @@ import ResultadoArirang from "./ResultadoArirang";
 import ArirangTags from "./components/ArirangTags";
 import { getBTSAlbums } from "@/services/btsAlbums";
 
+import localFont from "next/font/local";
+
+const myFont = localFont({
+  src: "../../../public/Akzidenz_Grotesk_Next_Medium.otf",
+});
+
+
+
 const arirang = [
   {
     image: "/arirang/a.png",
@@ -31,7 +39,7 @@ const LoaderArirang = () => {
           key={index}
           src={item.image}
           alt={item.title}
-          className="arirang-image object-contain"
+          className={`arirang-image object-contain`}
           width={100}
           height={100}
         />
@@ -94,15 +102,15 @@ const Arirang = () => {
 
   return (
     <div className="h-screen  overflow-hidden relative ">
-      <ArirangTags />
+      <ArirangTags/>
 
-      <div className="flex flex-col min-h-screen w-full items-center justify-center z-10 relative bg-black/20 ">
+      <div className={`flex flex-col min-h-screen w-full items-center justify-center z-10 relative bg-black/20 ${myFont.className}`}>
         {initialLoading ? (
           <LoaderArirang />
         ) : showLoader ? (
           <LoaderArirang />
         ) : showResult ? (
-          <ResultadoArirang onReset={handleReset} />
+            <ResultadoArirang onReset={handleReset} />
         ) : (
           <FormularioArirang onSubmit={handleFormSubmit} />
         )}

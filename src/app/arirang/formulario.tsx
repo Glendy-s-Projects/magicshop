@@ -42,7 +42,7 @@ const FormularioArirang = ({ onSubmit }: FormularioArirangProps) => {
           className={`text-3xl flex flex-col w-full items-center justify-center  max-md:text-xl  text-center font-bold uppercase max-sm:text-md space-y-0 ${darkSide ? "text-[#d60f2d]" : "text-black"} `}
         >
           <span
-            className={`${tagsStyles} object-contain px-6 py-2.5 mx-12 rotate-[-7deg] translate-x-[-5%]   z-90`}
+            className={`${tagsStyles} object-contain px-6 py-2.5 mx-12 rotate-[-7deg] translate-x-[-5%]  z-90`}
           >
             What is
           </span>
