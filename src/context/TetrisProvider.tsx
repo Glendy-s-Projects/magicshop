@@ -220,43 +220,6 @@ const TetrisProvider = ({ children }: AllProviderProps) => {
 
   const birthdaysLatest = [...BirthdayCards];
 
-  const isGiftLocked = (date: Date, index: number) => {
-    const birthdayId = birthdaysLatest[index]?.id;
-
-    // JK (id: 1) and RM (id: 2) show as available
-    if (
-      birthdayId === 1 ||
-      birthdayId === 2 ||
-      birthdayId === 3 ||
-      birthdayId === 4 ||
-      birthdayId === 5 ||
-      birthdayId === 6
-    ) {
-      return false;
-    }
-
-    // Other birthdays remain locked
-    return true;
-  };
-
-  const canOpenGift = (date: Date, index: number) => {
-    const birthdayId = birthdaysLatest[index]?.id;
-
-    // JK, RM and Jimin cards are always available (no level required)
-    if (
-      birthdayId === 1 ||
-      birthdayId === 2 ||
-      birthdayId === 3 ||
-      birthdayId === 4 ||
-      birthdayId === 5 ||
-      birthdayId === 6
-    ) {
-      return true;
-    }
-
-    return false;
-  };
-
   const tableBoard = [
     {
       title: "Score",
@@ -293,8 +256,6 @@ const TetrisProvider = ({ children }: AllProviderProps) => {
         resetGame,
         resetAll,
         birthdaysLatest,
-        isGiftLocked,
-        canOpenGift,
         tableBoard,
       }}
     >
