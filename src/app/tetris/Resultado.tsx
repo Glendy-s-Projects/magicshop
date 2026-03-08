@@ -18,8 +18,6 @@ const Resultado = () => {
     level,
     resetAll,
     birthdaysLatest,
-    isGiftLocked,
-    canOpenGift,
     tableBoard,
   } = useTetris();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -100,26 +98,21 @@ const Resultado = () => {
           
           {/* Birthday gifts - rendered but hidden for testing */}
           <div className="hidden">
-            {birthdaysLatest.map((bday, index) => {
-              const isLocked = isGiftLocked(bday.date, index);
-              const canOpen = canOpenGift(bday.date, index);
-
-              return (
-                <Gift2
-                  key={index}
-                  level={level}
-                  name={bday.shortAka}
-                  imageUrl={bday.birthdaycard}
-                  onClick={() => {
-                    if (canOpen && bday.birthdaycard) {
-                      setSelectedImage(bday.birthdaycard);
-                    }
-                  }}
-                  isLocked={isLocked}
-                  canOpen={canOpen}
-                />
-              );
-            })}
+            {birthdaysLatest.map((bday, index) => (
+              <Gift2
+                key={index}
+                level={level}
+                name={bday.shortAka}
+                imageUrl={bday.birthdaycard}
+                onClick={() => {
+                  if (bday.birthdaycard) {
+                    setSelectedImage(bday.birthdaycard);
+                  }
+                }}
+                isLocked={false}
+                canOpen={true}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -134,64 +127,32 @@ const Resultado = () => {
               icon={<RiCloseFill className="w-4 h-4 cursor-pointer" />}
             />
 
-            {birthdaysLatest.map((bday, index) => {
-              const isLocked = isGiftLocked(bday.date, index);
-              const canOpen = canOpenGift(bday.date, index);
-              const shouldShowCard = !isLocked && canOpen;
-
-              return (
+            {birthdaysLatest.map((bday, index) => (
+              <div
+                key={index}
+                className="bg-violet-300 rounded-md text-violet-950 text-sm flex flex-col items-center justify-center p-2"
+              >
                 <div
-                  key={index}
-                  className="bg-violet-300 rounded-md text-violet-950 text-sm flex flex-col items-center justify-center p-2"
+                  className="cursor-pointer transition-transform hover:scale-105"
+                  onClick={() => {
+                    if (bday.birthdaycard) {
+                      setSelectedImage(bday.birthdaycard);
+                    }
+                  }}
                 >
-                  {shouldShowCard ? (
-                    <div
-                      className="cursor-pointer transition-transform hover:scale-105"
-                      onClick={() => {
-                        if (bday.birthdaycard) {
-                          setSelectedImage(bday.birthdaycard);
-                        }
-                      }}
-                    >
-                      <Image
-                        src={bday.birthdaycard}
-                        alt={bday.shortAka}
-                        width={50}
-                        height={50}
-                        className="rounded-md"
-                      />
-                      <p>
-                        {bday.shortAka} {formatDate(bday.date)}{" "}
-                      </p>
-                    </div>
-                  ) : (
-                    <>
-                      {bday.birthdaycard && (
-                        <Image
-                          src={bday.birthdaycard}
-                          alt=""
-                          width={50}
-                          height={50}
-                        />
-                      )}
-                      <Gift2
-                        level={level}
-                        name={bday.shortAka}
-                        imageUrl={bday.birthdaycard}
-                        onClick={() => {
-                          if (canOpen && bday.birthdaycard) {
-                            setSelectedImage(bday.birthdaycard);
-                          }
-                        }}
-                        isLocked={isLocked}
-                        canOpen={canOpen}
-                      />
-                      {formatDate(bday.date)}
-                    </>
-                  )}
+                  <Image
+                    src={bday.birthdaycard}
+                    alt={bday.shortAka}
+                    width={50}
+                    height={50}
+                    className="rounded-md"
+                  />
+                  <p>
+                    {bday.shortAka} {formatDate(bday.date)}{" "}
+                  </p>
                 </div>
-              );
-            })}
+              </div>
+            ))}
           </div>
         </div>
       )}

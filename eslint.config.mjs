@@ -24,6 +24,12 @@ const eslintConfig = [
       "next-env.d.ts"
     ],
   },
+  {
+    // enforce no-explicit-any for non-test files
+    rules: {
+      "@typescript-eslint/no-explicit-any": "error",
+    },
+  },
   ...compat.extends("plugin:testing-library/react"),
   ...compat.extends("plugin:jest-dom/recommended"), // relax rules for test and e2e files to reduce noise from tests
   {

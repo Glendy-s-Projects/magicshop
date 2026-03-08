@@ -549,8 +549,6 @@ export type TetrisContextType = {
   resetGame: () => void;
   resetAll: () => void;
   birthdaysLatest: typeof BirthdayCards;
-  isGiftLocked: (date: Date, index: number) => boolean;
-  canOpenGift: (date: Date, index: number) => boolean;
   tableBoard: {
     title: string;
     value: number | string;
