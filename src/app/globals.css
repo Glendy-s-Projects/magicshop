@@ -313,6 +313,17 @@
   background-repeat: no-repeat;
 }
 
+.bg-cardArirangRed {
+  background-image: url("/arirang/arirangRed.webp");
+  background-repeat: no-repeat;
+}
+
+.bg-cardArirangWhite {
+  background-image: url("/arirang/arirangWhite.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .loader {
   position: relative;
   width: 120px;

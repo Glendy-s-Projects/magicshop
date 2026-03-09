@@ -1,12 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 import useDarkMode from "@/hooks/useDarkMode";
 import useDownload from "@/hooks/useDownload";
 import useRequestInfo from "@/hooks/useRequestInfo";
 import { ButtonUtils } from "@/utils/ButtonUtils";
-import { type CarouselApi}
-   from "@/hooks/components/ui/carousel";
+import { type CarouselApi } from "@/hooks/components/ui/carousel";
 import ResultadoCarousel from "./components/ResultadoCarousel";
-import Switcher  from '@/utils/Switcher';
+import Switcher from "@/utils/Switcher";
 
 interface ResultadoArirangProps {
   onReset?: () => void;
@@ -35,7 +34,6 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
     };
   }, [emblaApi]);
 
-
   return (
     <>
       <div>
@@ -52,18 +50,14 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
         />
       </div>
 
-    
-
-    <div className="w-64 h-96 relative">
-
-    <ResultadoCarousel 
-        usuario={usuario}
-        resultado={resultado}
-        darkSide={darkSide}
-        activeIndex={activeIndex}
-        setApi={setEmblaApi}
-    />
-
+      <div className="w-72 h-96 relative">
+        <ResultadoCarousel
+          usuario={usuario}
+          resultado={resultado}
+          darkSide={darkSide}
+          activeIndex={activeIndex}
+          setApi={setEmblaApi}
+        />
 
         <div className="flex items-center justify-center gap-2 pt-2 z-50 ">
           <ButtonUtils
@@ -80,9 +74,10 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
 
           <div className="flex items-center flex-col justify-center">
             <Switcher />
-            <span className="text-[8px] text-white">{darkSide ? "Dark" : "Light"}</span>
+            <span className="text-[8px] text-white">
+              {darkSide ? "Dark" : "Light"}
+            </span>
           </div>
-          
         </div>
       </div>
     </>
@@ -90,4 +85,3 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
 };
 
 export default ResultadoArirang;
-

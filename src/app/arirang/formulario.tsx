@@ -33,7 +33,7 @@ const FormularioArirang = ({ onSubmit }: FormularioArirangProps) => {
   const tagsStyles = `${darkSide ? "bg-arirangWhiteTag" : "bg-arirangRedTag2"} px-8 py-2 bg-cover bg-no-repeat`;
 
   return (
-    <div className="w-full h-full  flex items-center justify-center relative">
+    <div className="w-full h-full  flex items-center justify-center relative ">
       <div
         className={`${darkSide ? "bg-[#f5193b]" : "bg-white"}  py-6 flex flex-col items-center justify-center rounded-2xl`}
       >
