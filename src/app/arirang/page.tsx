@@ -104,7 +104,7 @@ const Arirang = () => {
     <div className="h-screen  overflow-hidden relative ">
       <ArirangTags/>
 
-      <div className={`flex flex-col min-h-screen w-full items-center justify-center z-10 relative bg-black/20 ${myFont.className}`}>
+      <div className={`flex flex-col min-h-screen w-full items-center justify-center  z-10 relative bg-black/20 ${myFont.className}`}>
         {initialLoading ? (
           <LoaderArirang />
         ) : showLoader ? (
