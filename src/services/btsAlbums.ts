@@ -28,7 +28,6 @@ export const getBTSAlbums = async (): Promise<SpotifyAlbum[]> => {
 
     const token = await getTokenSpotify();
     const albums = await getAllArtistAlbums(token, BTS_ARTIST_ID);
-    console.log("[BTS Albums] Fetched albums from Spotify:", albums);
     const filteredAlbums = albums.filter(album => album.album_type === "album");
     
     if (typeof window !== "undefined") {

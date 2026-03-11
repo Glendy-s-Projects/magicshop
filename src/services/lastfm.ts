@@ -98,7 +98,7 @@ const isTrackInTimeRange = (
   oneHourAgo: number
 ): boolean => {
   if (!track.date) {
-    console.log(`Found "${track.name}" - Currently playing`);
+    //console.log(`Found "${track.name}" - Currently playing`);
     return true;
   }
 
