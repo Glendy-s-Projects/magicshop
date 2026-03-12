@@ -55,6 +55,8 @@ export const DownloadProvider = ({ children }: AllProviderProps) => {
       backgroundColor: null,
       removeContainer: true,
       imageTimeout: 15000, // Timeout de 15 segundos para cargar imágenes
+      imageSmoothing: true,
+      imageSmoothingQuality: "high" as const,
       onclone: (clonedDoc: Document) => {
         const clonedElement = clonedDoc.getElementById("print");
         if (clonedElement) {
