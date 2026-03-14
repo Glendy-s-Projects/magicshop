@@ -105,7 +105,7 @@ const Arirang = () => {
       <ArirangTags/>
 
       <div className={`flex flex-col min-h-screen w-full items-center justify-center  z-10 relative bg-black/20 ${myFont.className}`}>
-        {initialLoading ? (
+       {initialLoading ? (
           <LoaderArirang />
         ) : showLoader ? (
           <LoaderArirang />
@@ -113,7 +113,8 @@ const Arirang = () => {
             <ResultadoArirang onReset={handleReset} />
         ) : (
           <FormularioArirang onSubmit={handleFormSubmit} />
-        )}
+        )} 
+        
       </div>
     </div>
   );
