@@ -15,6 +15,7 @@ import Modal from "@/photobooth/base/Modal";
 import useDownload from "@/hooks/useDownload";
 import Photo from "./Photo";
 import { myFont } from "@/utils/Fonts";
+import Link from "next/link";
 
 
 
@@ -156,13 +157,13 @@ const Arirang = () => {
           <ButtonUtils
             onClick={() => setActiveTab("card")}
             label="Card"
-            className={`px-6 py-2 uppercase font-extrabold  transition-all duration-300 ${activeTab === "card" ? "bg-[#d60f2d] text-white shadow-lg scale-105" : "bg-white text-black hover:bg-red-100"
+            className={`px-6 py-2 uppercase font-extrabold  transition-all duration-300 ${activeTab === "card" ? "bg-[#d60f2d] text-white shadow-lg scale-105" : "bg-white text-black/40 hover:bg-red-100"
               }`}
           />
           <ButtonUtils
             onClick={() => setActiveTab("pfp")}
             label="Pfp"
-            className={`px-6 py-2 uppercase font-extrabold  transition-all duration-300 ${activeTab === "pfp" ? "bg-[#d60f2d] text-white shadow-lg scale-105" : "bg-white text-black hover:bg-red-100"
+            className={`px-6 py-2 uppercase font-extrabold  transition-all duration-300 ${activeTab === "pfp" ? "bg-[#d60f2d] text-white shadow-lg scale-105" : "bg-white text-black/40 hover:bg-red-100"
               }`}
           />
         </div>
@@ -191,23 +192,31 @@ const Arirang = () => {
               handleFileChange={handleFileChange}
               preview={preview1}
               backgroundImage={backgroundImage}
+              activeTab={activeTab}
             />
-            <div data-testid="PhotoButton" className="flex  flex-row gap-2 max-md:justify-between max-sm:gap-4">
+            <div data-testid="PhotoButton" className="flex  flex-row items-center justify-center gap-2 max-md:justify-between max-sm:gap-4 bg-red-700">
               <ButtonUtils
                 label="Save"
                 onClick={handleDownloadImage}
-                // disabled={!backgroundImage}
-                className="max-sm:mt-2 bg-black text-white px-2 py-2 hover:bg-gradient-to-r from-amber-600 from-5% via-red-700 via-40% to-indigo-900 to-85%"
-                disableColors="disabled:bg-opacity-25 disabled:cursor-not-allowed disabled:hover:bg-none "
+                disabled={!preview1}
+                className={`max-sm:mt-2 ${preview1 ? ' bg-black hover:bg-gradient-to-r from-amber-600 from-5% via-red-700 via-40% to-red-900 to-85% text-white cursor-pointer' : 'bg-black/20 text-gray-600 cursor-not-allowed'}  px-2 py-2 `}
+
               />
 
               <ButtonUtils
-                label="Restart"
+                label="Clean"
                 onClick={resetPhotoArirang}
-                //disabled={!backgroundImage}
-                className=" max-sm:mt-2 bg-black text-white px-2 py-2 hover:bg-gradient-to-r from-abmer-600 from-5% via-red-700 via-40% to-indigo-900 to-85%"
-                disableColors="disabled:bg-opacity-25 disabled:cursor-not-allowed disabled:hover:bg-none"
+                className={`max-sm:mt-2 px-2 py-2  ${preview1 ? 'bg-black hover:bg-gradient-to-r from-amber-600 from-5% via-red-700 via-40% to-red-900 to-85% text-white cursor-pointer' : 'bg-black/20 text-gray-600 cursor-not-allowed'}`}
+                disabled={!preview1}
+
               />
+              <Link
+                href={"https://www.remove.bg/upload"}
+                target="_blank"
+                className="text-xs hover:underline hover:text-white "
+              >
+                Remove the bg <br /> for free here
+              </Link>
             </div>
           </div>
         )}
