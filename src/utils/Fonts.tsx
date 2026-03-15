@@ -18,6 +18,7 @@ import {
   Montserrat_Alternates,
   Tiny5,
 } from "next/font/google";
+import localFont from "next/font/local";
 
 //todo: Fonts Polaroid
 export const jinora = Recursive({
@@ -123,3 +124,7 @@ export const tiny = Tiny5({
   weight: ["400"],
 });
 
+
+export const myFont = localFont({
+  src: "../../public/Akzidenz_Grotesk_Next_Medium.otf",
+});
