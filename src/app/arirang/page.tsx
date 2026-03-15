@@ -58,7 +58,7 @@ const Arirang = () => {
   const { handleSubmit, handleResetContent, setAlbums, generateRandomSong } =
     useRequestInfo();
   const [activeTab, setActiveTab] = useState<"card" | "pfp">("card")
-  const { preview1, handleFileChange, backgroundImage, openModal, setOpenModal, setPreview1, resetPhotos, setImageSaved } = usePhotobooth()
+  const { preview1, handleFileChange, backgroundImage, openModal, setOpenModal, setPreview1, setImageSaved } = usePhotobooth()
   const { getProcessedImage, resetStates } = useImageCrop();
   const { handleDownloadImage } = useDownload();
 

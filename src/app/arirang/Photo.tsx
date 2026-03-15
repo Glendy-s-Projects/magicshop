@@ -9,7 +9,7 @@ type PhotoProps = {
   backgroundImage: string | null;
 };
 
-const Photo = ({ preview, handleFileChange, backgroundImage }: PhotoProps) => {
+const Photo = ({ preview, handleFileChange }: PhotoProps) => {
   const { changeColor } = usePhotobooth();
   return (
     <div data-test-id="Photo" className="flex flex-col items-center m-1">
