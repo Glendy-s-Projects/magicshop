@@ -12,6 +12,8 @@ type PhotoProps = {
 
 const Photo = ({ preview, handleFileChange }: PhotoProps) => {
   const { changeColor } = usePhotobooth();
+
+  const backgroundArirang = "/arirang/bg.webp";
   return (
     <div data-test-id="Photo" className="flex flex-col items-center m-1">
       <label
@@ -19,16 +21,23 @@ const Photo = ({ preview, handleFileChange }: PhotoProps) => {
         className={` ${preview ? "cursor-not-allowed" : "cursor-pointer"}`}
       >
         <div
-          className="relative w-64 h-64 max-sm:w-40 max-sm:h-36"
-          style={{ backgroundImage: "url('/arirang/bg.webp')", backgroundSize: "cover", backgroundPosition: "center" }}
+          className="relative w-80 h-80 max-sm:w-80 max-sm:h-80"
           id="print"
         >
+          <Image
+            src={backgroundArirang}
+            alt="Background"
+            className="absolute top-0 z-0 left-0 w-full h-full object-cover"
+            width={800}
+            height={800}
+          />
           {preview ? (
             <Image
               src={preview}
               alt="photoboothbts"
-              fill
-              className="object-cover"
+              className="object-cover relative z-20"
+              width={800}
+              height={800}
             />
           ) : (
             <div
