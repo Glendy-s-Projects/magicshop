@@ -213,6 +213,7 @@ const Arirang = () => {
               <Link
                 href={"https://www.remove.bg/upload"}
                 target="_blank"
+                rel="noopener noreferrer"
                 className="text-xs hover:underline hover:text-white "
               >
                 Remove the bg <br /> for free here
