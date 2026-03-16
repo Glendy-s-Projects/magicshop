@@ -87,7 +87,7 @@ const getCroppedImg = async (
       } else {
         resolve(null);
       }
-    }, "image/jpeg");
+    }, "image/png");
   });
 };
 

@@ -1,15 +1,14 @@
 import { ModalProps } from "@/types/index";
 
 const Modal = ({ open, children }: ModalProps) => {
+  if (!open) return null;
+
   return (
-    <div className={`fixed z-10 ${open ? "" : "hidden"}`} id="modal">
-      <div className="">
-        <div className="fixed inset-0 bg-gray-900 opacity-75"></div>
-      </div>
-      <span className="hidden sm:inline-block sm:align-middle sm:h-screen"></span>
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4" id="modal">
+      <div className="absolute inset-0 bg-gray-900 opacity-75"></div>
 
       <div
-        className="inline-block align-center rounded-lg text-left overflow-hidden shadow-xl transform transitio-all sm:align-middle  h-full w-full"
+        className="relative z-10 w-full max-w-2xl rounded-lg text-left overflow-hidden shadow-xl transform transition-all"
         role="dialog"
         aria-modal="true"
         aria-labelledby="modal-headline"

@@ -7,9 +7,7 @@ import PhotoButton from "./PhotoButton";
 import Modal from "./base/Modal";
 import ImageCropModalContent from "./ImageCropModalContent";
 import Logo from "./Logo";
-import Photo2 from "./photos/Photo2";
-import Photo3 from "./photos/Photo3";
-import Photo from "./photos/Photo";
+import Photo from "./Photo";
 
 type PhotoboothProps = {
   openModal: boolean;
@@ -96,12 +94,12 @@ const Photobooth = () => {
               preview={preview1}
               backgroundImage={backgroundImage}
             />
-            <Photo2
+            <Photo
               handleFileChange={handleFileChange}
               preview={preview2}
               backgroundImage={backgroundImage}
             />
-            <Photo3
+            <Photo
               handleFileChange={handleFileChange}
               preview={preview3}
               backgroundImage={backgroundImage}
