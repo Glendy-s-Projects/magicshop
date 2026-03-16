@@ -12,14 +12,6 @@ test("Generate a Photobooth", async ({ page }) => {
     .locator('[data-test-id="Photo"]')
     .getByRole("heading", { name: "Click to Add Your Photo" })
     .click();
-  await page
-    .locator('[data-test-id="Photo2"]')
-    .getByRole("heading", { name: "Click to Add Your Photo" })
-    .click();
-  await page
-    .locator('[data-test-id="Photo3"]')
-    .getByRole("heading", { name: "Click to Add Your Photo" })
-    .click();
   await page.getByTestId("Logo").click();
   await page.getByRole("img", { name: "logoarmy" }).click();
 });
