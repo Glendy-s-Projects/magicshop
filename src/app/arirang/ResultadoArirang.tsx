@@ -36,19 +36,7 @@ const ResultadoArirang = ({ onReset }: ResultadoArirangProps) => {
 
   return (
     <>
-      <div>
-        <iframe
-          data-testid="modal-iframe"
-          style={{ borderRadius: "12px" }}
-          src="https://open.spotify.com/embed/prerelease/1DcxHW214MCDxXju71RbvX?utm_source=generator"
-          width="300"
-          height="100"
-          frameBorder="0"
-          allowFullScreen={false}
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="eager"
-        />
-      </div>
+
 
       <div className="w-72 h-96 relative">
         <ResultadoCarousel

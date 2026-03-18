@@ -28,14 +28,8 @@ jest.mock("@/hooks/useRequestInfo", () => () => ({
     },
 }));
 
-jest.mock("../../src/app/photobooth/photos/Photo", () => () => (
+jest.mock("../../src/app/photobooth/Photo", () => () => (
     <div data-testid="Photo">Photo Component</div>
-));
-jest.mock("../../src/app/photobooth/photos/Photo2", () => () => (
-    <div data-testid="Photo2">Photo2 Component</div>
-));
-jest.mock("../../src/app/photobooth/photos/Photo3", () => () => (
-    <div data-testid="Photo3">Photo3 Component</div>
 ));
 jest.mock("../../src/app/photobooth/Logo", () => () => (
     <div data-testid="Logo">Logo Component</div>
@@ -56,9 +50,7 @@ jest.mock("../../src/app/photobooth/base/Modal", () => ({ children, open }: any)
 describe("Photobooth component", () => {
     it("renders without crashing", () => {
         render(<Photobooth />);
-        expect(screen.getByTestId("Photo")).toBeInTheDocument();
-        expect(screen.getByTestId("Photo2")).toBeInTheDocument();
-        expect(screen.getByTestId("Photo3")).toBeInTheDocument();
+        expect(screen.getAllByTestId("Photo")).toHaveLength(3);
         expect(screen.getByTestId("Logo")).toBeInTheDocument();
         expect(screen.getByTestId("PhotoButton")).toBeInTheDocument();
     });

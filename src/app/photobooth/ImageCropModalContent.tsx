@@ -13,8 +13,10 @@ const ImageCropModalContent = ({
   handleClose,
 }: ImageCropModalContentProps) => {
   const { handleFileChange } = usePhotobooth();
+  const modalInputId = "avatarInputCrop";
+
   return (
-    <div className="text-center relative pt-2">
+    <div className="text-center relative pt-2 ">
       <h5 className="text-gray-800 mb-4">Edit your picture</h5>
       <div className="border border-dashed border-gray-300 p-6 rounded-lg">
         <div className="flex justify-center">
@@ -29,12 +31,12 @@ const ImageCropModalContent = ({
           multiple
           onChange={handleFileChange}
           className="hidden"
-          id="avatarInput"
+          id={modalInputId}
           accept="image/*"
         />
 
         <Button variant="light" className="shadow w-full mb-4 hover:shadow-lg">
-          <label htmlFor="avatarInput"> Upload Another picture</label>
+          <label htmlFor={modalInputId}> Upload Another picture</label>
         </Button>
         <div className="flex gap-2">
           <Button variant="secondary" onClick={handleClose}>
