@@ -20,12 +20,12 @@ const Formulario = () => {
       bg: "bg-linear-to-r from-red-600 via-rose-800 to-orange-900", 
       selectedBg: "bg-linear-to-r from-gray-900 via-rose-500 to-orange-900 ring-white font-bold" 
     },
-    { 
-      id: "Ambos", 
-      name: "Ambos", 
-      bg: "bg-gradient-to-r from-indigo-900 via-white-10 to-red-900", 
-      selectedBg: "bg-gradient-to-r from-indigo-500 to-red-800 ring-2 ring-white font-bold" 
-    },
+    // { 
+    //   id: "Both", 
+    //   name: "Both", 
+    //   bg: "bg-gradient-to-r from-indigo-900 via-white-10 to-red-900", 
+    //   selectedBg: "bg-gradient-to-r from-indigo-500 to-red-800 ring-2 ring-white font-bold" 
+    // },
   ];
 
   return (
