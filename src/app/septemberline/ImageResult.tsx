@@ -9,6 +9,7 @@ const ImageResult = () => {
   const { name, diseño } = usuario;
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
+
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();
   }, [emblaApi]);
@@ -49,6 +50,7 @@ const ImageResult = () => {
             <div className="flex-[0_0_100%] min-w-0 relative">
               {renderImage("/septemberline/Jungkook-Birthday.webp", "Jungkook Birthday")}
             </div>
+            
           </div>
         </div>
         
@@ -71,7 +73,9 @@ const ImageResult = () => {
   // Single selection
   const imageSrc = diseño === "Namjoon" 
     ? "/septemberline/Namjoon-Birthday.webp" 
-    : "/septemberline/Jungkook-Birthday.webp";
+    :  diseño === "Jungkook"
+    ? "/septemberline/Jungkook-Birthday.webp" 
+    : "/septemberline/Jimin-Birthday.webp";
 
   return (
     <div className={`shadow-md rounded-xl w-96 max-w-full relative `}>
