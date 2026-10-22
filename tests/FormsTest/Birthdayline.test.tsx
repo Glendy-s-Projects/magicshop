@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Formulario from "../../src/app/septemberline/Formulario";
+import Formulario from "../../src/app/birthdayline/Formulario";
 import useRequestInfo from "@/hooks/useRequestInfo";
 
 jest.mock("@/utils/Fonts", () => ({

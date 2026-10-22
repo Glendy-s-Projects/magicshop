@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Resultado from "@/app/septemberline/Resultado";
+import Resultado from "@/app/birthdayline/Resultado";
 import useDownload from "@/hooks/useDownload";
 import useRequestInfo from "@/hooks/useRequestInfo";
 
@@ -18,7 +18,7 @@ jest.mock("@/utils/Fonts", () => ({
   michroma: { className: "michroma" },
 }));
 
-jest.mock("@/app/septemberline/ImageResult", () => ({
+jest.mock("@/app/birthdayline/ImageResult", () => ({
   __esModule: true,
   default: () => <div data-testid="septemberline-image-result" />,
 }));

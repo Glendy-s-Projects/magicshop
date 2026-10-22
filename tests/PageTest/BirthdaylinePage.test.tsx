@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import SeptemberLine from "@/app/septemberline/page";
+import SeptemberLine from "@/app/birthdayline/page";
 import useRequestInfo from "@/hooks/useRequestInfo";
 
 jest.mock("@/hooks/useRequestInfo", () => ({
@@ -7,12 +7,12 @@ jest.mock("@/hooks/useRequestInfo", () => ({
   default: jest.fn(),
 }));
 
-jest.mock("@/app/septemberline/Formulario", () => ({
+jest.mock("@/app/birthdayline/Formulario", () => ({
   __esModule: true,
   default: () => <div data-testid="septemberline-formulario">Formulario</div>,
 }));
 
-jest.mock("@/app/septemberline/Resultado", () => ({
+jest.mock("@/app/birthdayline/Resultado", () => ({
   __esModule: true,
   default: () => <div data-testid="septemberline-resultado">Resultado</div>,
 }));
